@@ -12,10 +12,12 @@ import React, { useState } from 'react';
 import {
   Pressable,
   SafeAreaView,
+  StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+import SearchBarCom from './components/SearchBarCom/SearchBarCom';
 
 
 const App = () => {
@@ -25,6 +27,10 @@ const App = () => {
 
   return (
     <SafeAreaView style={{'paddingTop':20}} >
+      <StatusBar
+     backgroundColor={'white'}
+     barStyle={'dark-content'}
+      />
       <View style={styles.container}>
         <Pressable
         onPress={() =>setButtonChange('delivery')}
@@ -41,6 +47,10 @@ const App = () => {
           onPress={() =>setButtonChange('pickup')}
           style={ButtonChange === 'pickup' ? styles.pressableText : styles.pressableTextTwo}> Pickup</Text></Pressable>
       </View>
+
+    {/* search bar Component  */}
+    <SearchBarCom/>
+
     </SafeAreaView>
   );
 };
